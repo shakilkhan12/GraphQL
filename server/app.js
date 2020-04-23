@@ -1,9 +1,11 @@
 const express = require("express");
 const graphqlHTTP = require('express-graphql')
+const cors = require("cors");
 const mongoose = require("mongoose")
 const schema = require("./schema/schema");
 const app = express();
-
+// Allow cross-origin requests
+      app.use(cors());
 mongoose.connect("mongodb://127.0.0.1:27017/graph-ql", {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.connection.once("open", () => {
     console.log('connection has been created successfully');
