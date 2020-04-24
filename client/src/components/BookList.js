@@ -7,7 +7,6 @@ import {getBooksQuery} from "../Queries/queries"
  const  BookList = () => {
     const {data, loading, error} = useQuery(getBooksQuery);
     const displayBooks = () => {
-        console.log(data, loading, error);
           if(loading){
               return <div>Loading books...</div>
           } else {
